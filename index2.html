@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakdaulet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .nav-btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        .nav-btn:hover, .nav-btn.active {
+            background: #1E90FF;
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+        }
+        .square1 {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            height: 499px;
+            margin-left: 170px;
+            width: 1000px;
+        }
+        .topic{
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .text1{
+            color:rgb(204, 217, 218);
+            width: 800px;
+            text-align: center;
+            position: relative;
+            font-size:16px; 
+            top: 50px;
+            line-height: 1.2;
+            margin-left: 80px;
+            font-weight:200px; 
+            font-family: 'Arial', sans-serif;
+        }
+        
+
+        .socials {
+            position: relative;
+            top: -174px;
+            width: 35px;
+            height: 35px;
+            transition: transform 0.3s ease;
+            margin-left: 15px;
+            left: -13px;
+        }
+
+        .socials:hover {
+            transform: scale(1.2);
+        }
+
+        .awards{
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 25px;
+        }
+        .text2{
+            color:rgb(204, 217, 218);
+            width: 800px;
+            text-align: center;
+            position: relative;
+            font-size:16px; 
+            top: 50px;
+            line-height: 1.5;
+            margin-left: 80px;
+            font-weight:200px; 
+            font-family: 'Arial', sans-serif;
+        }
+        .profile-img2{
+            width: 1000px;
+            height: 500px;
+            margin-left: -500px;
+            margin-top: -265px;
+            opacity: 0.3;
+            align-items: center;
+            position: relative;
+            background-size: cover;
+            position: fixed;
+            background: rgba(0, 0, 0, 0.5); /* Затемнение */
+            z-index: -1;
+        }
+        .card1{
+            display: flex;
+            background-color: rgb(0, 0, 0);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1.5px solid rgba(200, 200, 200, 0.5);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            opacity: 0.5;
+            position: absolute;
+
+            width: 745px;
+            height: 200px; 
+            min-height: 10px; 
+
+            top: 210px;
+            left: 320px; 
+        }
+        .bro1{
+            line-height: 1.5;
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-left: -450px;
+        }
+        .profile-img3{
+            width: 1000px;
+            height: 500px;
+            margin-left: -499px;
+            margin-top: -76px;
+            opacity: 0.4;
+            align-items: center;
+            position: absolute;
+            background-size: cover;
+            border-radius: 5px;
+            position: fixed;
+            background: rgba(0, 0, 0, 0.5); /* Затемнение */    
+            clip-path: polygon(0% 100%, 100% 0%, 0% 0%, 0% 0%);
+            z-index: -1;
+        }
+        .imac{
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            top: 200px;
+            left: 350px;
+        }
+        .it{
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            top: 240px;
+            font-size: 25px;
+            color:#c9cc29;
+            font-weight: 500;
+            left: 350px;
+        }
+        .txt3{
+            color:rgb(204, 217, 218);
+            width: 500px;
+            top: 380px;
+            line-height: 1.3;
+            right: 250px;
+            position: absolute;
+        }
+        .bro5{
+            margin-top: 10px;
+            line-height: 1.5;
+            font-size: 25px;
+            font-weight: bold;
+            margin-left: -20px;
+        }
+        .book{
+            width: 1000px;
+            height: 500px;
+            margin-left: -499px;
+            margin-top: -68px;
+            opacity: 0.3;
+            align-items: center;
+            position: absolute;
+            background-size: cover;
+            border-radius: 5px;
+            position: fixed;
+            background: rgba(0, 0, 0, 0.5); 
+            z-index: -1;
+        }
+        .ramka {
+            
+            max-width: 650px;
+            width: 80%; 
+            margin: 40px auto;
+            padding: 40px; 
+            top: 16px;
+            height: 200px;
+            padding-bottom: 0; 
+            border-radius: 10px;
+            border: 1.5px solid rgb(255, 255, 255);
+            background-color: rgba(255, 255, 255, 0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            position: relative;
+            
+        }
+        .txt4{
+            color:rgb(204, 217, 218);
+            width: 500px;
+            top: 25px;
+            line-height: 1.3;
+            font-size: 18px;
+            align-items: center;
+            position: absolute;
+        }
+        
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button class="nav-btn" onclick="changeSection('about', this)">Мен туралы</button>
+        <button class="nav-btn" onclick="changeSection('awards', this)">Жетістіктер</button>
+        <button class="nav-btn" onclick="changeSection('major', this)">Мамандық</button>
+        <button class="nav-btn" onclick="changeSection('history', this)">Тарих</button>
+    </div>
+    
+    <div class="square1" id="square1"></div>
+
+    <script>
+        function changeSection(section, btn) {
+        let content = document.getElementById("square1");
+        let buttons = document.querySelectorAll(".nav-btn");
+        buttons.forEach(button => button.classList.remove("active"));
+        btn.classList.add("active");
+            
+            if (section === "about") {
+                content.innerHTML = `
+                        <img src="img/ava.png" alt="Profile Photo" class="profile-img">
+                        <div class="topic">
+                            Әсілхан Бақдәулет Арманұлы
+                        </div>
+
+                        
+                        <div class="text1">
+                        <br>• Мен 2009 жылы Түркістан облысы, Отырар ауданы, Ынталы ауылында дүниеге келдім. Жастайымнан медреседе ғүламалардан ілім алып, ғылымға деген құштарлығым аштым. Солай, 7-сыныпқа дейін ауылдағы Ә.Байтанаев атындағы орта мектепте оқыдым, кейін 6-сыныптың соңына қарай РФМШ мектебіне тест тапсырып және өтіп 7-сыныптан бері осы жерде оқудамын. Қазір 10-сыныпта оқимын.</br>
+                        <br>• Отбасым: жалпы отбасым 6-адамнан тұрады: анам-Н.Индира, әкем-Ә.Арман, үлкен әпкем-Ә.Айдана, 
+                        ағам-Ә.Асылбек, келесі әпкем-А.Лашын және мен-Ә.Бақдәулет.</br>
+                        <br>• Хобби: футбол ойнау, сайт жасау, сурет салу, спортпен айналысу</br>
+                        </div>
+                        
+                        <a href="https://t.me/Assilkhanbakdaulet" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="socials">
+                        </a>
+                        <a href="https://www.instagram.com/assilkhan_bakdaulet?igsh=YzBjcGJuMzRtaWQ0&utm_source=qr" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" class="socials">
+                        </a> 
+                        <a href="mailto:bakdaulet.asilkhan26@fizmat.kz" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg" alt="Email" class="socials">
+                        </a>
+                        
+                        <a href="https://github.com/A-Bakdaulet" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Hitgub" class="socials">
+                        </a>
+                        
+                        
+                `;
+            } else if (section === "awards") {
+                content.innerHTML = `
+                <div class="awards">Жетістіктерім</div>
+                <div class="card1"></div>
+                <div class="text2">
+                    <br>• 5 сыныпқа дейін қазақ тілі, математика, тарих пәндерінен жарыстарға барып орын алғанмын
+                    <br>• Абай, Мағжан оқуларынан 3-орын
+                    <br>• Футболдан мектеп аралық жарыстан 2-орын
+                    <br>• Баскетбол мектеп аралық жарыстан 3-орын
+                    <br>• Құран оқу жарысында 1,2-орын
+                    <br>• Шашки ойынынан мектеп аралық жарыстан 1-орын
+                    <br>• НИШ,РФМШ,БИЛ - мектептеріне түстім
+                </div>
+                <img src="img/study2.png" alt="Profile Photo" class="profile-img2">
+                
+                
+                `;
+            } else if (section === "major") {
+                content.innerHTML = `
+                <div class="bro1">Менің болашақ мамандығым</div>
+                <img src="img/stusy3.png" alt="Profile Photo" class="profile-img3">
+                <img src="img/imac.png" alt="Profile Photo" class="imac">
+                <div class="it">IT</div>
+                <div class="txt3">
+                    Менің болашақ мамандығым – IT саласы. Бұл – заман талабына сай ең сұранысқа ие бағыттардың бірі. Ақпараттық технологиялар әлемді өзгертіп, жаңа мүмкіндіктер ашуда. Маған бағдарламалау, веб-дамыту және жасанды интеллект ұнайды. Мен осы саланы терең меңгеріп, болашақта жаңа инновациялық жобалар жасағым келеді. IT – тек мамандық емес, бұл – шығармашылық пен логиканы біріктіретін қызықты әлем.     
+                </div>
+                `;
+                
+            } else if (section === "history") {
+                content.innerHTML = `
+                <div class="bro5">Тарихта атыңды қалай қалдырар едің?</div>
+                <img src="img/book.png" alt="Profile Photo" class="book">
+                <div class="ramka">
+                    <div class="txt4">
+                        Менің мамандығым – IT. Бұл сала үздіксіз дамып, әлемді өзгертіп келеді. Мен жасанды интеллект пен бағдарламалау бағытында жетістікке жетуді мақсат етемін. Адамдарға пайдасы тиетін жобалар жасап, технологияның дамуына үлес қосуды қалаймын. Болашақта өз атымды IT тарихында қалдыруды армандаймын.
+                    </div>
+                <div>
+                `;
+            }
+        }
+            window.onload = function() {
+            changeSection('about', document.querySelector('.nav-btn'));
+        };
+    </script>
+</body>
+</html>
